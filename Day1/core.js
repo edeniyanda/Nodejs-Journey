@@ -1,19 +1,28 @@
-console.log(); // is a Global Object
+// Day 1: Understanding Global Objects in Node.js
 
-// Other global object include
-// setTimeout();
-// clearTimeout();
-// setInterval();
+// The console object is a global object in Node.js
+console.log('Hello, World!'); // Prints "Hello, World!" to the console
 
-// In Javascript all functin and Object that are defined globally can be access by the window widget
-// Technically setTimeout(); is the same as window.setTimeout()
+// Other global objects include:
+// setTimeout(), clearTimeout(), setInterval(), clearInterval()
 
-// Likewise this
+// In browser-based JavaScript, all functions and objects defined globally 
+// can be accessed via the window object. For example:
+// window.setTimeout() is equivalent to setTimeout()
+
+// Similarly:
 var message = "Welcome to Earth";
-// Can be access by 
+// In the browser, this can be accessed using:
 // window.message 
 
-// But in Node will can onlt access al this Javascript global variable using the global keyword
+// However, in Node.js, global variables are not automatically added to the global scope.
+// To access global variables in Node.js, you use the global object.
+// For example:
+console.log(global.message); // This outputs "undefined"
 
-// So variables defined are not automatically added to the global scope
-console.log(global.message) // This outputs "undefined"
+// This is because variables defined using var, let, or const within a Node.js module
+// are scoped to that module and not added to the global object. To add a variable
+// to the global scope, you explicitly attach it to the global object:
+
+global.message = "Hello, Node.js!";
+console.log(global.message); // This outputs "Hello, Node.js!"
