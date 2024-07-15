@@ -1,14 +1,15 @@
-// Day 3: Loading Variables and Functions from a module in Node.js
+// Day 3: Loading Variables and Functions from a Module in Node.js
 
-// To load a module we use the require function, it is only availabe in node not in Web based Javascript
+// To load a module, we use the require function. It is only available in Node.js, not in web-based JavaScript.
 
-// var  logger = require("../Day 2/creating_and_loading_a_module/logger.js");
-// logger.whichFoundation("Hello This is the Second Foundation");
+// Example:
+// const logger = require("../Day 2/creating_and_loading_a_module/logger.js");
+// logger.whichFoundation("Hello, this is the second foundation");
 
-
-// It ia a best practice to always declare all your imported varibles weith a constant 
-// like this 
+// It is a best practice to always declare all your imported variables with a constant like this:
 const logger = require("../Day 2/creating_and_loading_a_module/logger.js");
-logger.terminuxUrl = "www.home.com";
 
-logger.whichFoundation("Hello");
+// You can then use the imported module's properties and methods:
+logger.terminuxUrl = "www.home.com"; // Updating the URL
+
+logger.whichFoundation("Hello"); // Calling the function
