@@ -1,10 +1,12 @@
-// Day 3: Exporting Variables and Functions in Node.js
+// Day 2: Exporting Variables and Functions in Node.js
 
 // Say I have this URL:
 var terminuxUrl = "https://primeradiant.io/";
 
 function whichFoundation(message) {
     console.log(message);
+    console.log("This is the foundation general website" + terminuxUrl);
+
 }
 
 // Since all variables and functions defined in a Node.js module are private to that module,
